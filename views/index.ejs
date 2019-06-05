@@ -3,19 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>Home Page</title>
-     <!--    <link rel="stylesheet" type="text/css" href="../public/materalize-css"> -->
+        		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">	
+        			
     </head>
     <body>
         <h1>Your Places!</h1>
 
-        <% for ( let i = 0 ; i <= place.length ; i++) { %>
+        <% for ( let i = 0 ; i < place.length ; i++) { %>
         		<div>
-        			<%= place[i].location %>
-        			
+        			<li><%= place[i].img %></li>
+        			<li><%= place[i].location %></li>
+        			<li><%= place[i].duration%></li>
+        			<li><%= place[i].expense %></li>
         		</div>
   <%  }  %>
 
-<a href="/place/new">Create New Places</a>
 
+
+  <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">add</i></a>
     </body>
 </html>

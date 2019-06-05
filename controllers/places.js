@@ -6,7 +6,7 @@ const Place = require('../model/place.js')
 ////index route////
 router.get('/' , (req, res) => {
 
-Place.find({} , (error , allPlaces) => {
+Place.find( {} , (error , allPlaces) => {
 	if(error)  res.send('OOOps')
 		else res.render('index.ejs' , {
 			place : allPlaces	
@@ -24,7 +24,8 @@ router.get('/seed' , (req , res) => {
 	{
 		location: 'Nagi',
 		img: "",
-		duraion : "2 hours",
+		date: "02-14-2019",
+		duration : "2 hours",
 		expense : 124,
 		fun : true
 
@@ -53,7 +54,7 @@ router.get('/:id' ,(req , res) => {
 
 	Place.findById(req.params.id , (err , foundPlace) => {
 		res.render('show.ejs' , {
-			place : Place
+			place : foundPlace
 		})
 	})
 

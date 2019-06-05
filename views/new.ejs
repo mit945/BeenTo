@@ -3,16 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>New Place :</title>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
         <h1>New Location :</h1>
          <form action="/place" method="POST">
             Location Name: <input type="text" name="location" /><br/>
             Picture: <input type="text" name="img" /><br/>
+            Date: <input type="text" name="date" class="datepicker"><br/>
             Time Spent : <input type="text" name="duration" placeholder="Hr/Day">
             Expense? <input type="number" name="expense" placeholder="USD">
-            Fun OR Nah: <input type="checkbox" name="fun" /><br/>
-            <input type="submit"  value="Create Place" />
+            <label>
+
+        <input type="checkbox" />
+        	<span>Check if you had fun</span>
+   			</label><br/>
+
+            <input type="submit" class="btn waves-effect waves-light" value="Create Place" />
         </form><br/>
 
         <a href="/place">Home Page</a>
