@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Place = require('../model/place.js')
+// console.log(Place)
 
 ////index route////
 router.get('/' , (req, res) => {
@@ -8,7 +9,7 @@ router.get('/' , (req, res) => {
 Place.find({} , (error , allPlaces) => {
 	if(error)  res.send('OOOps')
 		else res.render('index.ejs' , {
-			place : Place	
+			place : allPlaces	
 		})
 	})
 
@@ -38,9 +39,7 @@ router.get('/seed' , (req , res) => {
 ////new Route ////
 
 router.get('/new' , (req , res) => {
-	res.render('new.ejs' ,{
-	
-	})
+	res.render('new.ejs')
 })
 
 ////////

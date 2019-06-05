@@ -6,5 +6,15 @@
     </head>
     <body>
         <h1>Edit</h1>
+        <form action = "/place/<%= place.id %>"?_method=PUT method = "POST" >
+        	 Location Name: <input type="text" name="location" value="" /><br/>
+            Picture: <input type="text" name="img" value=""/><br/>
+            Time Spent : <input type="text" name="duration" placeholder="Hr/Day" value=""/>
+            Expense? <input type="number" name="expense" placeholder="USD" value=""/>
+            Fun?: <input type="checkbox" name="fun" /><br/>
+            <input type="submit"  value="submit" />
+        	
+
+        </form>
     </body>
 </html>

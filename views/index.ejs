@@ -3,11 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>Home Page</title>
-        <link rel="stylesheet" type="text/css" href="../public/materalize-css">
+     <!--    <link rel="stylesheet" type="text/css" href="../public/materalize-css"> -->
     </head>
     <body>
         <h1>Your Places!</h1>
 
+        <% for ( let i = 0 ; i <= place.length ; i++) { %>
+        		<div>
+        			<%= place[i].location %>
+        			
+        		</div>
+  <%  }  %>
 
 <a href="/place/new">Create New Places</a>
 
