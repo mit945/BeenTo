@@ -4,9 +4,14 @@ const Place = require('../model/place.js')
 
 ////index route////
 router.get('/' , (req, res) => {
-  res.render('index.ejs' ,{
-  	place : Place
-  });
+
+Place.find({} , (error , allPlaces) => {
+	if(error)  res.send('OOOps')
+		else res.render('index.ejs' , {
+			place : Place	
+		})
+	})
+
 });
 
 ///////
@@ -18,7 +23,7 @@ router.get('/seed' , (req , res) => {
 	{
 		location: 'Nagi',
 		img: "",
-		duraion : " 2 hours",
+		duraion : "2 hours",
 		expense : 124,
 		fun : true
 
@@ -29,11 +34,12 @@ router.get('/seed' , (req , res) => {
 
 
 ////////////
+
 ////new Route ////
 
 router.get('/new' , (req , res) => {
 	res.render('new.ejs' ,{
-		place : Place
+	
 	})
 })
 
@@ -42,9 +48,16 @@ router.get('/new' , (req , res) => {
 ///show route //
 
 router.get('/:id' ,(req , res) => {
-	res.render('show.ejs', {
-		place : Place
+	// res.render('show.ejs', {
+	// 	place : Place
+	// })
+
+	Place.findById(req.params.id , (err , foundPlace) => {
+		res.render('show.ejs' , {
+			place : Place
+		})
 	})
+
 })
 
 ////////
@@ -71,7 +84,20 @@ router.get('/:id/edit' , (req , res) => {
 ///Create Route ////
 
 router.post('/' , (req , res) => {
-	
+	if(req.body.fun === 'on'){ //if checked, req.body.readyToEat is set to 'on'
+        req.body.fun = true;
+    } else { //if not checked, req.body.readyToEat is undefined
+        req.body.fun = false;
+    }
+    Place.create( req.body, (error , createPlace) => {
+    	if(error) res.send('you done messed up')
+    else{
+    	
+    	console.log(createPlace)
+    	res.redirect('/place')
+
+    	}
+    })
 
 })
 
