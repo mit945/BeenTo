@@ -13,7 +13,7 @@ places they had been to.
 `````````````````````````````````````````````````````````````````````````````````
 ### Trello
 
-https://trello.com/b/zHTyNsPo/beento
+https://trello.com/invite/b/zHTyNsPo/dc941e2d927de3a164ebfd41976d3c07/beento
 
 
 ### Heroku
