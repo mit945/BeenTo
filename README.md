@@ -1,8 +1,8 @@
 # project-2
 BEEN_TO Full Stack app
-### Problem: I have a huge enamel pin collection and want to organize it all in one place.
-### General App Idea/Purpose: An app that allows me to catalogue all my pins by category. 
-### Who Would Use It: Pin collectors.
+### Problem: Having issue with what(event/activity/memory) to do first
+### General App Idea/Purpose: An app that remind you where you have been to and the worth of that specific memory.
+### Who Would Use It: Busy people like you
 
 ```````````````````````````````
 App Description:
