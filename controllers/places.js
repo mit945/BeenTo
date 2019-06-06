@@ -65,7 +65,14 @@ router.get('/:id' ,(req , res) => {
 ///Update Route////
 
 router.put('/:id' , (req , res) => {
-
+	    if(req.body.fun === 'on'){
+        req.body.fun =true
+    }else{
+        req.body.fun = false
+    }
+    Place.findByIdAndUpdate(req.params.id ,req.body ,(err,updatePlace) => {
+        res.redirect('/place')
+    })
 })
 
 /////
@@ -74,8 +81,10 @@ router.put('/:id' , (req , res) => {
 ////edit route ///
 
 router.get('/:id/edit' , (req , res) => {
+	Place.findById(req.params.id , (err , foundPlace) => {
 	res.render('edit.ejs' , {
-		place : Place
+		place : foundPlace
+		})
 	})
 })
 

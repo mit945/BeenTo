@@ -7,13 +7,18 @@
     </head>
     <body>
         <h1>Edit</h1>
-        <form action = "/place/<%= place.id %>"?_method=PUT method = "POST" >
-        	 Location Name: <input type="text" name="location" value="" /><br/>
-            Picture: <input type="text" name="img" value=""/><br/>
-            Time Spent : <input type="text" name="duration" placeholder="Hr/Day" value=""/>
-            Expense? <input type="number" name="expense" placeholder="USD" value=""/>
+        <form action = "/place/<%= place.id %>?_method=PUT" method = "POST" >
+        	 Location Name: <input type="text" name="location" value="<%= place.location %>" /><br/>
+
+            Picture: <input type="text" name="img" value="<%=place.img %>"/><br/>
+            Start Date :
+            <input type="text" name="date" value="<%= place.date %>" />
+            Time Spent : <input type="text" name="duration" placeholder="Hr/Day" value="<%= place.duration %>"/><br/>
+
+            Expense? <input type="number" name="expense" placeholder="USD" value="<%= place.expense %>"/><br/>
+
             Fun?: <input type="checkbox" name="fun" /><br/>
-            <input type="submit"  value="submit" />
+            <input type="submit"  value="submit changes" />
         	
 
         </form>
