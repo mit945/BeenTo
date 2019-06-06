@@ -1,6 +1,5 @@
 //___________________
 //Dependencies
-//___________________
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
@@ -15,7 +14,7 @@ const placeController = require('./controllers/places.js')
 const PORT = process.env.PORT || 3000;
 
 //___________________
-//Database
+//Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
 // const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `YOUR_DATABASE_NAME`;

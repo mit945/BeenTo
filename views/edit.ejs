@@ -3,16 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Edit place</title>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    	<script type="text/javascript" src="/client.js"></script>
     </head>
     <body>
+    	
         <h1>Edit</h1>
         <form action = "/place/<%= place.id %>?_method=PUT" method = "POST" >
         	 Location Name: <input type="text" name="location" value="<%= place.location %>" /><br/>
 
             Picture: <input type="text" name="img" value="<%=place.img %>"/><br/>
             Start Date :
-            <input type="text" name="date" value="<%= place.date %>" />
+            <input type="text" name="date" value="<%= place.date %>" class="datepicker" />
+
             Time Spent : <input type="text" name="duration" placeholder="Hr/Day" value="<%= place.duration %>"/><br/>
 
             Expense? <input type="number" name="expense" placeholder="USD" value="<%= place.expense %>"/><br/>
@@ -22,5 +26,10 @@
         	
 
         </form>
+            <a href="/place">Home Page</a><br/>
+            	<form action="/place/<%=place.id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+
+                    </form>
     </body>
 </html>

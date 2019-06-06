@@ -47,11 +47,8 @@ router.get('/new' , (req , res) => {
 
 ///show route //
 
-router.get('/:id' ,(req , res) => {
-	// res.render('show.ejs', {
-	// 	place : Place
-	// })
-
+router.get('/:id' , (req , res) => {
+	
 	Place.findById(req.params.id , (err , foundPlace) => {
 		res.render('show.ejs' , {
 			place : foundPlace
@@ -66,11 +63,11 @@ router.get('/:id' ,(req , res) => {
 
 router.put('/:id' , (req , res) => {
 	    if(req.body.fun === 'on'){
-        req.body.fun =true
+        req.body.fun = true
     }else{
         req.body.fun = false
     }
-    Place.findByIdAndUpdate(req.params.id ,req.body ,(err,updatePlace) => {
+    Place.findByIdAndUpdate(req.params.id ,req.body ,(err , updatePlace) => {
         res.redirect('/place')
     })
 })
@@ -81,8 +78,10 @@ router.put('/:id' , (req , res) => {
 ////edit route ///
 
 router.get('/:id/edit' , (req , res) => {
-	Place.findById(req.params.id , (err , foundPlace) => {
-	res.render('edit.ejs' , {
+	// console.log(Place)
+	Place.findById( req.params.id , (err , foundPlace) => {
+		// console.log(req.params.id)
+		res.render( 'edit.ejs' , {
 		place : foundPlace
 		})
 	})
@@ -115,7 +114,7 @@ router.post('/' , (req , res) => {
 ////Destroy////
 
 router.delete('/:id' , (req , res) => {
-	Place.findByIdAndRemove(req.params.id , (error,data) => {
+	Place.findByIdAndRemove(req.params.id , (error , data) => {
 		res.redirect('/place')
 	})
 })
