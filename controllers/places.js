@@ -98,7 +98,7 @@ router.post('/' , (req , res) => {
         req.body.fun = false;
     }
     Place.create( req.body, (error , createPlace) => {
-    	if(error) res.send('you done messed up')
+    	if(error) res.send('Please fill out the require area!')
     else{
     	
     	console.log(createPlace)

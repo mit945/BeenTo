@@ -6,7 +6,7 @@ const placeSchema = new mongoose.Schema({
 	img : {type: String , require: false},
 	date: String,
 	duration: {type: String , require: true},
-	expense : Number,
+	expense : {type:Number, require: true},
 	fun : Boolean
 	
 })
