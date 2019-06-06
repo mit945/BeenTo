@@ -4,25 +4,33 @@
         <meta charset="utf-8">
         <title>New Place :</title>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    	<script type="text/javascript" src="/client.js"></script>
     </head>
     <body>
+    
+    	    
         <h1>New Location :</h1>
          <form action="/place" method="POST">
             Location Name: <input type="text" name="location" /><br/>
-            Picture: <input type="text" name="img" /><br/>
-            Date: <input type="text" name="date" class="datepicker"><br/>
+
+            Start Date: <input type="text" name="date" class="datepicker" /><br/>
+
             Time Spent : <input type="text" name="duration" placeholder="Hr/Day">
+
             Expense? <input type="number" name="expense" placeholder="USD">
             <label>
 
         <input type="checkbox" />
         	<span>Check if you had fun</span>
    			</label><br/>
+   			Add Image : <input type="text" name="img" /><br/>
 
             <input type="submit" class="btn waves-effect waves-light" value="Create Place" />
         </form><br/>
 
         <a href="/place">Home Page</a>
 
+    
     </body>
 </html>

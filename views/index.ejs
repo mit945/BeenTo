@@ -10,11 +10,15 @@
         <h1>Your Places!</h1>
 
         <% for ( let i = 0 ; i < place.length ; i++) { %>
-        		<div>
-        			<li><%= place[i].img %></li>
-        			<li><%= place[i].location %></li>
-        			<li><%= place[i].duration%></li>
-        			<li><%= place[i].expense %></li>
+        		<div class="container">
+        			<li>
+        			<%= place[i].img %>
+        			<%= place[i].location %>
+        			<%= place[i].duration%>
+        			<%=place[i].date %>
+        			<%= place[i].expense %>
+        			<%= place[i].fun %>
+        		</li>
         		</div>
   <%  }  %>
 
