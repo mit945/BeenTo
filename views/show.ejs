@@ -7,8 +7,18 @@
     </head>
     <body>
         <h1>show</h1>
+        <img src="<%= place.img %>"><br/>
+      You were in <%= place.location %><br/>
+        On <%= place.date %><br/>
+        You spent<%= place.duration %><br/>
+        and you spent <%= place.expense %>!<br/>
+        
+        <% if(place.fun === true) { %>
 
-        <%= place.location %>
-        <%= place.date %>
+        	You Had Fun , Coool.
+       <% }else{ %>
+
+       		Awww, maybe not this place
+        <% } %>
     </body>
 </html>

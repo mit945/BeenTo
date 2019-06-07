@@ -2,16 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>User Log in Page</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
     <body>
-        <h1>Sign In</h1>
+        <h1>User Log in :</h1>
         <form action="/sessions" method="POST">
-            <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password" />
+            Your UserName: <input type="text" name="username" placeholder="username"/><br/>
+
+            Your Password :<input type="password" name="password" placeholder="xxxx1234"/><br/>
+
+
             <input type="submit" value="Log In" />
         </form>
 
-        <a href="/">Back to Index</a>
+        <a href="/log-in">Back to Index</a>
     </body>
 </html>

@@ -3,29 +3,48 @@
     <head>
         <meta charset="utf-8">
         <title>Home Page</title>
-        		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">	
+        		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        		<style type="text/css">
+        			
+        			span{
+        				font-family: Swiss;
+        				color: steelblue;
+        				border: 3px yellow solid;
+        			}
+        		</style>	
         			
     </head>
     <body>
-        <h1>Your Places!</h1>
+
+
+    	   <% if (!currentUser) { %>
+                <li><a href="/sessions/new">Log In</a></li>
+                <li><a href="/users/new">Register</a></li>
+           <% }else { %>
+
+    	<!-- if user have logged in show below -->
+   
+        <h1>YOU HAVE <span>BEEN_TO</span> :</h1>
 
         <% for ( let i = 0 ; i < place.length ; i++) { %>
-        		<div class="collection">
-        		<li class="">
-        			
-        			<a href="/place/<%=i%>"><%= place[i].location %></a><br/>
-        			<%= place[i].duration%><br/>
-        			<%=place[i].date %><br/>
-        			<%= place[i].expense %><br/>
-        			<%= place[i].fun %>
-        		</li>
+        	
+
         		
-        		<a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a>
-        		</div>
+        			<ul class="collection with-header"></ul>
+        			
+        			<li ><a href="/place/<%= place[i].id %>/"><%= place[i].location %></a></li>
+        			<li><%= place[i].duration%></li>
+        			<li><%= place[i].date %></li>
+        			<li><i>$</i><%= place[i].expense %></li>
+        			<li><%= place[i].fun %></li>
+        		
+        		
+        		<a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/>
+        		
   <%  }  %>
 
-
-
-  <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">add</i></a>
+ 				 <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">add</i></a>
+ <%  }  %>
     </body>
 </html>

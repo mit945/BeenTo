@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt');
-const User = require('../models/users.js')
+const User = require('../model/user.js')
 
 router.get('/new' , (req , res) => {
 	res.render('sessions/new.ejs')
