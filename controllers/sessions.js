@@ -16,16 +16,16 @@ router.post('/', (req , res) => {
 		}else if(bcrypt.compareSync(req.body.password , foundUser.password)){
 			req.session.currentUser = foundUser;
 
-			res.redirect('/')
+			res.redirect('/place')
 		}else{
 			res.send('wrong password!');
 		}
 	})
 })
 
-router.delete('/', (req , res) => {
+router.delete('/place/log-in', (req , res) => {
     req.session.destroy(()=>{
-        res.redirect('/');
+        res.redirect('/place/log-in');
     });
 })
 

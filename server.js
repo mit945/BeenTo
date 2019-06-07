@@ -10,6 +10,7 @@ const placeController = require('./controllers/places.js')
 const userController = require('./controllers/users.js')
 const sessionController = require('./controllers/sessions.js')
 const session = require('express-session')
+// console.log(sessionController)
 
 //___________________
 //Port
@@ -26,9 +27,9 @@ const PORT = process.env.PORT || 3000;
 // Connect to Mongo
 
 mongoose.connect('mongodb://localhost:27017/beento',{userNewUrlParser:true});
-mongoose.connect('mongodb://localhost:27017/auth',{
-	useNewUrlParser:true
-});
+// mongoose.connect('mongodb://localhost:27017/auth',{
+// 	useNewUrlParser:true
+// });
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
@@ -71,13 +72,20 @@ app.use('/users', userController);
 //___________________
 // Routes
 //___________________
-app.get('/log-in' ,(req , res) => {
+app.get('/place/log-in' ,(req , res) => {
 	res.render('index.ejs' ,{
 		currentUser: req.session.currentUser,
 
 	})
 	// res.send('User log ins')
 })
+app.get('/app', (req, res)=>{
+  if(req.session.currentUser){
+  	res.render('index.ejs')
+  }else{
+  	res.redirect('/sessions/new/')
+  }
+});
 app.use('/place' , placeController)
 
 

@@ -97,7 +97,7 @@ router.post('/' , (req , res) => {
     } else { //if not checked, req.body.readyToEat is undefined
         req.body.fun = false;
     }
-    Place.create( req.body, (error , createPlace) => {
+    Place.create( req.body , (error , createPlace) => {
     	if(error) res.send('Please fill out the require area!')
     else{
     	
@@ -120,3 +120,8 @@ router.delete('/:id' , (req , res) => {
 })
 
 module.exports = router;
+
+ // <% if (!currentUser) { %>
+
+ 	  // <% }else { %>
+ 	 // <%  }  %>

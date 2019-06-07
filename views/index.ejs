@@ -18,10 +18,11 @@
     <body>
 
 
-    	   <% if (!currentUser) { %>
-                <li><a href="/sessions/new">Log In</a></li>
-                <li><a href="/users/new">Register</a></li>
-           <% }else { %>
+    	  
+               <!--  <li><a href="/sessions/new">Log In</a></li>
+                <li><a href="/users/new">Register</a></li><br/>
+                <span>BEEN_TO</span> -->
+         		
 
     	<!-- if user have logged in show below -->
    
@@ -40,11 +41,16 @@
         			<li><%= place[i].fun %></li>
         		
         		
-        		<a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/>
+        		<a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/><br/><br/>
         		
   <%  }  %>
 
- 				 <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">add</i></a>
- <%  }  %>
+
+ 				 <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">+</i></a><br/><br/>
+
+ 			 <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Logout"/>
+        </form>
+  
     </body>
 </html>
