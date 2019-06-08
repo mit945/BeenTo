@@ -22,11 +22,11 @@ const PORT = process.env.PORT || 3000;
 //Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `YOUR_DATABASE_NAME`;
+const MONGODB_URI = 'mongodb://localhost:27017/beento' || 'mongodb://localhost/'+ `beento`;
 
 // Connect to Mongo
 
-mongoose.connect('mongodb://localhost:27017/beento',{userNewUrlParser:true});
+mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
 // mongoose.connect('mongodb://localhost:27017/auth',{
 // 	useNewUrlParser:true
 // });
