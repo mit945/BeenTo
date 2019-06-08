@@ -6,12 +6,15 @@ const Place = require('../model/place.js')
 ////index route////
 router.get('/' , (req, res) => {
 
-Place.find( {} , (error , allPlaces) => {
-	if(error)  res.send('OOOps')
-		else res.render('index.ejs' , {
+if(req.session.currentUser){
+		Place.find( {} , (error , allPlaces) => {
+	// if(error)  res.send('OOOps')
+	 res.render('users/user.ejs' , {
 			place : allPlaces	
 		})
 	})
+}
+
 
 });
 

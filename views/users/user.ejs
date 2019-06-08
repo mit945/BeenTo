@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Create User</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <style type="text/css">
+                    
+                    span{
+                        font-family: Swiss;
+                        color: steelblue;
+                        border: 3px yellow solid;
+                        }
+                    li {
+                         list-style-type: none;
+                         color: lightgreen;
+                        }
+                    p{
+                        font-size: 25px;
+                        color: red;
+                        text-transform: capitalize;
+                        text-decoration: underline;
+
+                    }   
+                    #delete form{
+                        background-color: azure;
+                        width :30px;
+                        height:15px;
+                        color: darkblue;
+                        border-radius: .2em;
+
+                    }
+                    html{
+                        background-image:linear-gradient(red, yellow); 
+                    }
+                </style>    
+    </head>
+    <body>
+       <!-- if user have logged in show below -->
+   
+        <h1>YOU HAVE <span>BEEN_TO</span> :</h1>
+
+        <% for ( let i = 0 ; i < place.length ; i++) { %>
+          
+
+            
+              <ul class="collection with-header"></ul>
+              
+            <p>You have been to : </p>  <h2><li><a href="/place/<%= place[i].id %>/"> <%= place[i].location %></a></li></h2><br/><br/>
+              <p>You Spent : </p> <li><%= place[i].duration%></li>
+              <p>On Date : </p><li><%= place[i].date %></li>
+            <p>Cost :</p> <li><i>$</i><%= place[i].expense %></li><br/><br/>
+              
+            
+            
+            <a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/><br/><br/>
+            
+  <%  }  %>
+
+
+         <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">+</i></a><br/><br/>
+
+       <form action="/sessions?_method=DELETE" method="POST" >
+            <input id="delete" type="submit" value="Logout"/>
+        </form>
+
+  
+    </body>
+</html>

@@ -66,32 +66,41 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.use('/sessions' , sessionController)
-app.use('/users', userController);
-
+app.use('/create-account', userController);
+app.use('/place' , placeController)
 
 //___________________
 // Routes
 //___________________
-app.get('/place/log-in' ,(req , res) => {
-	res.render('index.ejs' ,{
-		currentUser: req.session.currentUser,
+// app.get('log-in' ,(req , res) => {
+// 	res.render('index.ejs' ,{
+// 		currentUser: req.session.currentUser,
 
-	})
+// 	})
 	
+// })
+app.get('/' , (req , res) => {
+  // res.send('hello world')
+  res.render('index.ejs' , {
+
+  })
 })
-app.get('/app', (req, res)=>{
-  if(req.session.currentUser){
-  	res.render('index.ejs')
-  }else{
-  	res.redirect('/sessions/new/')
-  }
-});
-app.use('/place' , placeController)
+
+
+// app.get('/app', (req, res)=>{
+//   if(req.session.currentUser){
+//   	res.render('index.ejs')
+//   }else{
+//   	res.redirect('/sessions/new/')
+//   }
+// });
+
 
 
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 
-// <!--  <% if(!currentUser) { %> -->
 
+ // <% if(!currentUser) { %>
 	
  	// <!-- <%	} %> -->
+

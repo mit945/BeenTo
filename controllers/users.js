@@ -5,15 +5,15 @@ const bcrypt = require('bcrypt');
 
 
 
-router.get('/log-in' ,(req , res) => {
+router.get('/' ,(req , res) => {
 
-	res.render('users/userLogin.ejs')
+	res.render('users/new.ejs')
 
 })
 
-router.get('/new', (req, res) => {
-    res.render('users/new.ejs');
-});
+// router.get('/new', (req, res) => {
+//     res.render('users/new.ejs');
+// });
 
 
 

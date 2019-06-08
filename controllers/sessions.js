@@ -3,14 +3,17 @@ const router = express.Router()
 const bcrypt = require('bcrypt');
 const User = require('../model/user.js')
 
-router.get('/new' , (req , res) => {
+router.get('/' , (req , res) => {
 	res.render('sessions/new.ejs')
 })
 
 
 
 router.post('/', (req , res) => {
+	console.log(req.body)
+
 	User.findOne({ username: req.body.username},(err , foundUser) => {
+		console.log(foundUser)
 		if(!foundUser){
 			res.redirect('/sessions/new')
 		}else if(bcrypt.compareSync(req.body.password , foundUser.password)){
@@ -23,9 +26,9 @@ router.post('/', (req , res) => {
 	})
 })
 
-router.delete('/place/log-in', (req , res) => {
+router.delete('/', (req , res) => {
     req.session.destroy(()=>{
-        res.redirect('/place/log-in');
+        res.redirect('/');
     });
 })
 
