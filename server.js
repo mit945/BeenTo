@@ -16,7 +16,7 @@ const session = require('express-session')
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 //___________________
 //Database  //need editing 
