@@ -10,19 +10,21 @@ const placeController = require('./controllers/places.js')
 const userController = require('./controllers/users.js')
 const sessionController = require('./controllers/sessions.js')
 const session = require('express-session')
+const dotenv = require('dotenv')
 // console.log(sessionController)
 
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = 3000;
+const PORT = process.env.PORT ;
+
 
 //___________________
 //Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = 'mongodb://localhost:27017/beento' || 'mongodb://localhost/'+ 'beento';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'beento';
 
 // Connect to Mongo
 
