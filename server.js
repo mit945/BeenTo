@@ -26,7 +26,7 @@ const MONGODB_URI = 'mongodb://localhost:27017/beento' || 'mongodb://localhost/'
 
 // Connect to Mongo
 
-mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
+mongoose.connect(MONGODB_URI , {useNewUrlParser:true});
 // mongoose.connect('mongodb://localhost:27017/auth',{
 // 	useNewUrlParser:true
 // });
@@ -35,13 +35,6 @@ mongoose.connection.once('open', ()=> {
 });
 
 
-// Error / success
-// db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-// db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
-// db.on('disconnected', () => console.log('mongo disconnected'));
-
-// // open the connection to mongo
-// db.on('open' , ()=>{});
 
 
 
