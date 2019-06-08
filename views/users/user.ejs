@@ -18,7 +18,7 @@
                         }
                     p{
                         font-size: 25px;
-                        color: red;
+                        color: blue;
                         text-transform: capitalize;
                         text-decoration: underline;
 
@@ -32,7 +32,7 @@
 
                     }
                     html{
-                        background-image:linear-gradient(red, yellow); 
+                        background-image:linear-gradient(green, red); 
                     }
                 </style>    
     </head>
@@ -48,18 +48,18 @@
               <ul class="collection with-header"></ul>
               
             <p>You have been to : </p>  <h2><li><a href="/place/<%= place[i].id %>/"> <%= place[i].location %></a></li></h2><br/><br/>
-              <p>You Spent : </p> <li><%= place[i].duration%></li>
+              <!-- <p>You Spent : </p> <li><%= place[i].duration%></li>
               <p>On Date : </p><li><%= place[i].date %></li>
-            <p>Cost :</p> <li><i>$</i><%= place[i].expense %></li><br/><br/>
+            <p>Cost :</p> <li><i>$</i><%= place[i].expense %></li><br/><br/> -->
               
             
             
-            <a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/><br/><br/>
+            <a class="card-panel steelblue lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/><br/><br/>
             
   <%  }  %>
 
 
-         <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">+</i></a><br/><br/>
+         <a class="btn-floating btn-large waves-effect waves-light blue" href="/place/new"><i class="material-icons">+</i></a><br/><br/>
 
        <form action="/sessions?_method=DELETE" method="POST" >
             <input id="delete" type="submit" value="Logout"/>
