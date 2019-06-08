@@ -22,8 +22,9 @@ const PORT =  3000 || 3000;
 //Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = 'mongodb://localhost:27017/beento' || 'mongodb://localhost/'+ `beento`;
+// const MONGODB_URI = 'mongodb://localhost:27017/beento' 
 
+const MONGODB_URI =  'mongodb://localhost/'+ 'beento';
 // Connect to Mongo
 
 mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
@@ -33,7 +34,7 @@ mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
-// mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+
 
 // Error / success
 // db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
