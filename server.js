@@ -81,26 +81,14 @@ app.use('/place' , placeController)
 // })
 app.get('/' , (req , res) => {
   // res.send('hello world')
-  res.render('index.ejs' , {
-
-  })
+  res.render('index.ejs')
 })
 
 
-// app.get('/app', (req, res)=>{
-//   if(req.session.currentUser){
-//   	res.render('index.ejs')
-//   }else{
-//   	res.redirect('/sessions/new/')
-//   }
-// });
 
 
 
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
-
-
- // <% if(!currentUser) { %>
-	
- 	// <!-- <%	} %> -->
+app.listen(PORT, () => 
+  // console.log ( 'Listening on port:', PORT)
+  );
 
