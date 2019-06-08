@@ -16,15 +16,14 @@ const session = require('express-session')
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT =  3000 || 3000;
+const PORT = 3000;
 
 //___________________
 //Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
-// const MONGODB_URI = 'mongodb://localhost:27017/beento' 
+const MONGODB_URI = 'mongodb://localhost:27017/beento' || 'mongodb://localhost/'+ 'beento';
 
-const MONGODB_URI =  'mongodb://localhost/'+ 'beento';
 // Connect to Mongo
 
 mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
