@@ -10,7 +10,8 @@ const placeController = require('./controllers/places.js')
 const userController = require('./controllers/users.js')
 const sessionController = require('./controllers/sessions.js')
 const session = require('express-session')
-const dotenv = require('dotenv')
+const dotenv = require('dotenv').config()
+
 // console.log(sessionController)
 
 //___________________
@@ -83,5 +84,6 @@ app.get('/' , (req , res) => {
 
 
 
-app.listen(PORT);
+app.listen(PORT, () => {console.log('Listen on port  ' + PORT) });
 
+ 

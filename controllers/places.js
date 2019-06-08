@@ -95,9 +95,9 @@ router.get('/:id/edit' , (req , res) => {
 ///Create Route ////
 
 router.post('/' , (req , res) => {
-	if(req.body.fun === 'on'){ //if checked, req.body.readyToEat is set to 'on'
+	if(req.body.fun === 'on'){ 
         req.body.fun = true;
-    } else { //if not checked, req.body.readyToEat is undefined
+    } else {
         req.body.fun = false;
     }
     Place.create( req.body , (error , createPlace) => {
@@ -124,7 +124,3 @@ router.delete('/:id' , (req , res) => {
 
 module.exports = router;
 
- // <% if (!currentUser) { %>
-
- 	  // <% }else { %>
- 	 // <%  }  %>
