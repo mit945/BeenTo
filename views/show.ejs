@@ -4,15 +4,19 @@
         <meta charset="utf-8">
         <title>show place</title>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <style type="text/css">
+            html{
+                        background-image:linear-gradient(red, yellow); 
+                    }
+         </style>
     </head>
     <body>
-        <h1>show</h1>
+        <h1> Look at this moment and :  </h1>
         <img src="<%= place.img %>"><br/>
-      You were in <%= place.location %><br/>
-        On <%= place.date %><br/>
-        You spent<%= place.duration %><br/>
-        and you spent <%= place.expense %>!<br/>
-        
+        <p>You Spent : </p> <li><%= place.duration%></li>
+              <p>On Date : </p><li><%= place.date %></li>
+            <p>Cost :</p> <li><i>$</i><%= place.expense %></li><br/><br/>
+          
         <% if(place.fun === true) { %>
 
         	You Had Fun , Coool.

@@ -11,7 +11,29 @@
         				font-family: Swiss;
         				color: steelblue;
         				border: 3px yellow solid;
-        			}
+        				}
+        			li {
+   						 list-style-type: none;
+   						 color: lightgreen;
+						}
+					p{
+						font-size: 25px;
+						color: red;
+                        text-transform: capitalize;
+                        text-decoration: underline;
+
+					}	
+                    #delete form{
+                        background-color: azure;
+                        width :30px;
+                        height:15px;
+                        color: darkblue;
+                        border-radius: .2em;
+
+                    }
+                    html{
+                        background-image:linear-gradient(red, yellow); 
+                    }
         		</style>	
         			
     </head>
@@ -34,11 +56,11 @@
         		
         			<ul class="collection with-header"></ul>
         			
-        			<li ><a href="/place/<%= place[i].id %>/"><%= place[i].location %></a></li>
-        			<li><%= place[i].duration%></li>
-        			<li><%= place[i].date %></li>
-        			<li><i>$</i><%= place[i].expense %></li>
-        			<li><%= place[i].fun %></li>
+        		<p>You have been to : </p>	<h2><li><a href="/place/<%= place[i].id %>/"> <%= place[i].location %></a></li></h2><br/><br/>
+        			<!-- <p>You Spent : </p> <li><%= place[i].duration%></li>
+        			<p>On Date : </p><li><%= place[i].date %></li>
+        		<p>Cost :</p>	<li><i>$</i><%= place[i].expense %></li><br/><br/> -->
+        			
         		
         		
         		<a class="card-panel pink lighten-3" href="/place/<%= place[i].id %>/edit">Edit</a><br/><br/><br/>
@@ -48,8 +70,8 @@
 
  				 <a class="btn-floating btn-large waves-effect waves-light red" href="/place/new"><i class="material-icons">+</i></a><br/><br/>
 
- 			 <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Logout"/>
+ 			 <form action="/sessions?_method=DELETE" method="POST" >
+            <input id="delete" type="submit" value="Logout"/>
         </form>
   
     </body>
