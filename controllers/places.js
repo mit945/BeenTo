@@ -5,7 +5,7 @@ const Place = require('../model/place.js')
 
 ////index route////
 router.get('/' , (req, res) => {
-
+	console.log(req.session)
 if(req.session.currentUser){
 		Place.find( {} , (error , allPlaces) => {
 	// if(error)  res.send('OOOps')
@@ -13,6 +13,8 @@ if(req.session.currentUser){
 			place : allPlaces	
 		})
 	})
+}else {
+	res.redirect('/')
 }
 
 
