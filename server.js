@@ -33,7 +33,7 @@ mongoose.connect(MONGODB_URI , {userNewUrlParser:true});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+// mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
 
 // Error / success
 // db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
