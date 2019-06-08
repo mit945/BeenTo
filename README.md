@@ -5,11 +5,14 @@ BEEN_TO Full Stack app
 ### Who Would Use It: Busy people like you
 
 ```````````````````````````````
-App Description:
-Problem: I want to see if the place I went are worthy to visit again
-General App Idea/Purpose: Track the places you travel to and calculate the expenses, fully editable, deleteable, and showable.
-Who Would Use It: travelers and people who needs a reminder of the things they have done or
-places they had been to.
+User Stories:
+-User can Login/register for an account
+-User can login/logout
+-User can add places
+-User can edit places
+-user can delete places
+-User can add places
+-User can add image through image URL
 `````````````````````````````````````````````````````````````````````````````````
 ### Trello
 
