@@ -30,9 +30,9 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'beento';
 // Connect to Mongo
 
 mongoose.connect(MONGODB_URI , {useNewUrlParser:true});
-// mongoose.connect('mongodb://localhost:27017/auth',{
-// 	useNewUrlParser:true
-// });
+mongoose.connect('mongodb://localhost:27017/auth',{
+	useNewUrlParser:true
+});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });

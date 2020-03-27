@@ -6,51 +6,57 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             <style type="text/css">
-                    
-                    span{
-                        font-family: Swiss;
-                        color: steelblue;
-                        border: 3px yellow solid;
-                        }
+                    #header{
+                      width: 100%;
+                      display: inline-block; 
+                      font-size: 50px;
+                    }
+          
                     li {
                          list-style-type: none;
                          color: lightgreen;
                         }
-                    p{
-                        font-size: 25px;
-                        color: blue;
-                        text-transform: capitalize;
-                        text-decoration: underline;
-
+                    #para{
+                        font-size: 40px;
+                        font-family: Roboto;
+                        color: ghostwhite;                       
                     }   
                     #delete form{
-                        background-color: azure;
-                        width :30px;
-                        height:15px;
-                        color: darkblue;
-                        border-radius: .2em;
+                    
 
                     }
                     html{
-                        background-image:linear-gradient(green, red); 
+                        background-color: #2a8237; 
+                    }
+                    div{
+                      height: 150px;
+                      width: 100%;
+                      display: inline-block;
+                      font-size: 100px;
                     }
                 </style>    
     </head>
     <body>
        <!-- if user have logged in show below -->
    
-        <h1>YOU HAVE <span>BEEN_TO</span> :</h1>
+        <a href="" id = "header" class="card-panel steelblue lighten-3" >BEEN_TO</a>
 
         <% for ( let i = 0 ; i < place.length ; i++) { %>
           
 
             
-              <ul class="collection with-header"></ul>
+              <!-- <ul class="collection with-header"></ul> -->
               
-            <p>You have been to : </p>  <h2><li><a href="/place/<%= place[i].id %>/"> <%= place[i].location %></a></li></h2><br/><br/>
-              <!-- <p>You Spent : </p> <li><%= place[i].duration%></li>
-              <p>On Date : </p><li><%= place[i].date %></li>
-            <p>Cost :</p> <li><i>$</i><%= place[i].expense %></li><br/><br/> -->
+            <p id="para">Start adding places : </p> 
+             <div>
+              <li>
+                <a href="/place/<%= place[i].id %>/"> <%= place[i].location %>
+                  
+                </a>
+              </li>
+            </div>
+            <br/><br/>
+              
               
             
             

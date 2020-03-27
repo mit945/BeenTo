@@ -6,15 +6,23 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
          <style type="text/css">
             html{
-                        background-image:linear-gradient(red, yellow); 
-                    }
+                        background-color: #880e4f;
+            }
+            p{
+                font-family: Roboto;
+                color: ghostwhite;
+            }
+            h1{
+                font-family: Roboto;
+                color: ghostwhite;
+            }
          </style>
     </head>
-    <body>
-        <h1> Look at your moment at :  </h1>
+    <body >
+        <h1> Look at your moment :  </h1>
         <img src="<%= place.img %>"><br/>
-        <p>You Spent : </p> <li><%= place.duration%></li>
-              <p>On Date : </p><li><%= place.date %></li>
+        <p>Duration : </p> <li><%= place.duration%></li>
+              <p>Date : </p><li><%= place.date %></li>
             <p>Cost :</p> <li><i>$</i><%= place.expense %></li><br/><br/>
          <% if(place.fun === true) { %>
 
