@@ -25,7 +25,7 @@ const PORT = process.env.PORT ;
 //Database  //need editing 
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'beento';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'enigmatic-journey-57462';
 
 // Connect to Mongo
 
