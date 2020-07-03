@@ -1,6 +1,6 @@
 # BEENTO
 
-** Node.js backend with MongoDB **
+**Node.js backend with MongoDB**
 
 ## Application Functionality
 ```````````````````````````````````````
@@ -9,10 +9,10 @@
   - Add images to your favorite places 
 ```````````````````````````````````````
 ## Features
-``````````````````````````````````````
+```
   - Materialized CSS Date-picker
   - OAUTH
-`````````````````````````````````````
+```
 
 
 Link: https://been-to.herokuapp.com/
