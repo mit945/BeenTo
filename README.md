@@ -5,7 +5,7 @@
 ## Application Functionality
 ```````````````````````````````````````
   - CRUD (Create, Read, Update, Delete)
-  - Create, login, logout users
+  - Create username and password. Login, logout as users
   - Add images to your favorite places 
 ```````````````````````````````````````
 ## Features
